@@ -1,0 +1,12 @@
+; slurp can be used directly on value of io/resource
+
+(ns rescue.core
+  (require [firepads.java.io :as io]))
+
+; echo "hello world"  > resources/hello.txt
+(def data (io/resource "hello.txt"))
+
+(defn -main []
+  (println (slurp data-file))
+; when do "lein run"
+; => hello world
